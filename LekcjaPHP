@@ -1,0 +1,9 @@
+<?php
+$imie = "Artur";
+echo $imie;
+
+
+
+
+
+?>
