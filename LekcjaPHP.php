@@ -1,24 +1,40 @@
+<html>
+<head>
+<body>
+<form method="POST" action="">
+<input type="text" name="liczba1" size="10">
+<select name="znak">
+<option>+</option>
+<option>-</option>
+<option>*</option>
+<option>/</option>
+</select>
+<input type="text" name="liczba2" size="10">
+<input type="submit" value="Oblicz">
+</form>
 <?php
 
-class Czlowiek
+$liczba1 = $_POST['liczba1'];
+$liczba2 = $_POST['liczba2'];
+$znak = $_POST['znak'];
+$wynik = "";
+switch ($znak)
 {
-	public $imie;
-	public $nazwisko;
-	public $wiek;
-
-
-	public function setImie($imie){
-		this->imie = $imie;
-		return true;
-	}
-	public function getImie(){
-		return this->imie;
-	}
+ case "+":
+   $wynik = $liczba1+$liczba2;
+   break;
+ case "-":
+   $wynik = $liczba1-$liczba2;
+   break;
+ case "*":
+   $wynik = $liczba1*$liczba2;
+   break;
+ case "/":
+   $wynik = $liczba1/$liczba2;
+   break;
 }
-
-$osoba = new Czlowiek();
-//$osoba ->setimie("");
-
-var_dump ($osoba);
-
+echo $wynik;
 ?>
+</body>
+</head>
+</html>
